@@ -108,8 +108,8 @@ const $name(this.value);
     final type = isInteger ? 'int' : 'String';
 
     String enumParse(bool nullCheck) => caseSensitive
-        ? 'return enums.$name.values.firstWhereOrNull((e) => (e.value.toString().toLowerCase() == ${name.camelCase}?.toString().toLowerCase()) || (e.index - 1).toString() == ${name.camelCase}) ?? defaultValue'
-        : 'return enums.$name.values.firstWhereOrNull((e) => (e.value.toString().toLowerCase() == ${name.camelCase}?.toString().toLowerCase()) || (e.index - 1).toString() == ${name.camelCase}) ?? defaultValue';
+        ? 'return enums.$name.values.firstWhereOrNull((e) => (e.value.toString().toLowerCase() == ${name.camelCase}?.toString().toLowerCase()) || (e.index - 1).toString() == ${name.camelCase}?.toString()) ?? defaultValue'
+        : 'return enums.$name.values.firstWhereOrNull((e) => (e.value.toString().toLowerCase() == ${name.camelCase}?.toString().toLowerCase()) || (e.index - 1).toString() == ${name.camelCase}?.toString()) ?? defaultValue';
 
     return '''
 $type? ${name.camelCase}NullableToJson(enums.$name? ${name.camelCase}) {
